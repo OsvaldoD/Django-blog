@@ -6,30 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pagina Inicial</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/style.css" %}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/bootstrap.min.css" %}" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/style.css" %}" />
+ 
 </head>
 <body>
     <br><br><br><br>
     <div class="container">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-                {% for post in posts%}
-                <div class="card w-75">
+            {% for post in posts%}
+        <div class="col-md-2"></div>     
+        <div class="col-md-8">              
+                <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title">{{post.autor}}</h3>
-                        
-                        <p class="card-text">{{post.corpo|truncatewords:50}}.</p>
-                        <a href="#" class="btn btn-primary">Button</a>
-                        {% endfor%}
+                        <h4 class="card-title display-4">{{post.titulo}}</h4>               
+                        <p class="card-text" id=" artigo">{{corpo}}...</p>
+                        <p class="text-muted">Autor: {{post.autor}}</p>
+                       
                     </div>
                 </div>
+                <br> <br>
 
         </div>
-
-
         <div class="col-md-2"></div>
+        {% endfor%}
         
            
 
