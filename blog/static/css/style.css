@@ -1,0 +1,23 @@
+#main {
+  background-color: #fcfcfc;
+}
+#card {
+    background-color: white;
+}
+#full-content {
+    font-style:normal;
+     font-size:23px;
+    font-weight:450;
+    font-family:'Times New Roman', Times, serif;
+    letter-spacing: -.003em;
+    line-height: 1.70;
+    color: rgba(0,0,0,.84);
+    display: block;
+    text-align: justify;
+}
+#full-content-title{
+    font-family:'Times New Roman', Times, serif;
+    font-style:normal;
+    font-size:50px;
+    font-weight:450;
+}

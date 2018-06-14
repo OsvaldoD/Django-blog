@@ -1,6 +1,9 @@
 from django.db import models
 
 # Create your models here.
+
+
+
 class Autor(models.Model):
     nome = models.CharField(max_length=64)
     email = models.CharField(max_length=64)
@@ -13,9 +16,14 @@ class Post(models.Model):
     data = models.DateTimeField()
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
     corpo = models.TextField()
+    
 
     def __str__(self):
         return self.titulo
+
+
+
+
 
 
 

@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,37 +9,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/bootstrap.min.css" %}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/style.css" %}" />
- 
+
 </head>
-<body>
-    <br><br><br><br>
-    <div class="container">
-            {% for post in posts%}
-        <div class="col-md-2"></div>     
-        <div class="col-md-8">              
+
+<body id="main">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container" >
+        {% for post in posts%}
+        <div class="row" >
+            <div class="col"></div>
+            <div class="col-8">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title display-4">{{post.titulo}}</h4>               
-                        <p class="card-text" id=" artigo">{{corpo}}...</p>
-                        <p class="text-muted">Autor: {{post.autor}}</p>
-                       
+                        <h4 class="card-title display-4" id="full-content-title">{{post.titulo}}</h4>
+                        <blockquote class="blockquote">
+                            <footer class="blockquote-footer"><cite title="Source Title">{{post.autor}}</cite></footer>
+                          </blockquote>
+                        
+                        <p class="card-text">{{corpo}}...</p>
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-muted" class="float-left">Data: {{data}}</p>
+                            </div>
+                            <div class="col">
+                                <a href="post/{{post.id}}" class="float-right">
+                                    <span>Ler Mais</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <br> <br>
-
+                <br>
+                <br>
+            </div>
+            <div class="col"></div>
         </div>
-        <div class="col-md-2"></div>
         {% endfor%}
-        
-           
-
-                  
     </div>
-    
+
 
     <script src="{% static "js/jquery.3.3.1.min.js" %}"></script>
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/script.js" %}"></script>
-    
+
 </body>
+
 </html>
